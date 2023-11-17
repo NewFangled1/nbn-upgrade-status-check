@@ -18,9 +18,9 @@ I run the script on a Synology NAS using the Task Scheduler, but you are welcome
 
 **How to run**
 
-Place the script in a suitable location. For a NAS, preferably locate in a shared directory rather than a system directory to avoid permissions issues. For example in: /volume1/data/Scripts/NBN_Lookup
+1. Place the script in a suitable location. For a NAS, preferably locate in a shared directory rather than a system directory to avoid permissions issues. For example in: /volume1/data/Scripts/NBN_Lookup
 
-Add to Task Scheduler to run periodically (e.g. once a day). The script is run like:
+2. Add to Task Scheduler to run periodically (e.g. once a day). The script is run like:
 bash /(ScriptLocation)/NBN_API_Fetch.sh (LocationID) (Email address) (Name) (Send data on Friday?)
 
 Where:

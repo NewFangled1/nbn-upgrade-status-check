@@ -17,15 +17,16 @@ he script only looks for changes in the following fields:
 I run the script on a Synology NAS using the Task Scheduler, but you are welcome to try on other devices.
 
 **How to run**
+
 Place the script in a suitable location. For a NAS, preferably locate in a shared directory rather than a system directory to avoid permissions issues. For example in: /volume1/data/Scripts/NBN_Lookup
 Add to Task Scheduler to run periodically (e.g. once a day). The script is run like:
-bash /<ScriptLocation>/NBN_API_Fetch.sh <LocationID> <Email address> <Name> <Send data on Friday?>
+bash /(ScriptLocation)/NBN_API_Fetch.sh (LocationID) (Email address) (Name) (Send data on Friday?)
 
 Where:
 <LocationID> is the unique Id for the premises. It can be found by putting your address in: https://www.aussiebroadband.com.au/nbn-poi/
-<Email address> is the address to send emails to
-<Name> a unique name. This is used because script may monitor multiple premises, this name is used as part of the text file that stores the data and also part of the subject of emails
-<Send data on Friday?> Set to Yes to send the fetched data on a Friday regardless if the data has changed. I use this because I want to receive emails periodically to know the script is still working. Setting to anything else (e.g. No), will mean emails are only sent when the data changes
+(Email address) is the address to send emails to
+(Name) a unique name. This is used because script may monitor multiple premises, this name is used as part of the text file that stores the data and also part of the subject of emails
+(Send data on Friday?) Set to Yes to send the fetched data on a Friday regardless if the data has changed. I use this because I want to receive emails periodically to know the script is still working. Setting to anything else (e.g. No), will mean emails are only sent when the data changes
 
 For example:
 bash /volume1/data/Scripts/NBN_Lookup/NBN_API_Fetch.sh LOC000000000000 example@email.com Bob Yes

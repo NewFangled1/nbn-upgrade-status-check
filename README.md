@@ -23,9 +23,12 @@ Add to Task Scheduler to run periodically (e.g. once a day). The script is run l
 bash /(ScriptLocation)/NBN_API_Fetch.sh (LocationID) (Email address) (Name) (Send data on Friday?)
 
 Where:
-<LocationID> is the unique Id for the premises. It can be found by putting your address in: https://www.aussiebroadband.com.au/nbn-poi/
+(LocationID) is the unique Id for the premises. It can be found by putting your address in: https://www.aussiebroadband.com.au/nbn-poi/
+
 (Email address) is the address to send emails to
+
 (Name) a unique name. This is used because script may monitor multiple premises, this name is used as part of the text file that stores the data and also part of the subject of emails
+
 (Send data on Friday?) Set to Yes to send the fetched data on a Friday regardless if the data has changed. I use this because I want to receive emails periodically to know the script is still working. Setting to anything else (e.g. No), will mean emails are only sent when the data changes
 
 For example:

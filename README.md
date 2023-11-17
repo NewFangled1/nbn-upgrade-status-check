@@ -19,10 +19,12 @@ I run the script on a Synology NAS using the Task Scheduler, but you are welcome
 **How to run**
 
 Place the script in a suitable location. For a NAS, preferably locate in a shared directory rather than a system directory to avoid permissions issues. For example in: /volume1/data/Scripts/NBN_Lookup
+
 Add to Task Scheduler to run periodically (e.g. once a day). The script is run like:
 bash /(ScriptLocation)/NBN_API_Fetch.sh (LocationID) (Email address) (Name) (Send data on Friday?)
 
 Where:
+
 (LocationID) is the unique Id for the premises. It can be found by putting your address in: https://www.aussiebroadband.com.au/nbn-poi/
 
 (Email address) is the address to send emails to
@@ -36,7 +38,7 @@ bash /volume1/data/Scripts/NBN_Lookup/NBN_API_Fetch.sh LOC000000000000 example@e
 
 **Some things to note**
 - The script will create a text file in the same location as the script. This is used to store the data and check against to see if the data has changed.
-- To check multiple premises, add a separate instance to task scheduler and make sure to use a different <Name>. Probably a good idea to run at different times too 
+- To check multiple premises, add a separate instance to task scheduler and make sure to use a different (Name). Probably a good idea to run at different times too 
 - The script will email the data the first time the script is run (check in the junk folder)
 - The script assumes the device already has an FROM email address setup with correct server settings etc. I used a new Gmail address in my NAS
 - Don't set this to run too often. The data changes rarely. So something like once a day is suitable

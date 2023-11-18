@@ -42,3 +42,35 @@ bash /volume1/data/Scripts/NBN_Lookup/NBN_API_Fetch.sh LOC000000000000 example@e
 - The script will email the data the first time the script is run (check in the junk folder)
 - The script assumes the device already has an FROM email address setup with correct server settings etc. I used a new Gmail address in my NAS
 - Don't set this to run too often. The data changes rarely. So something like once a day is suitable
+
+**Explanation of fields**
+To the best of my knowledge, the firlds mean:
+
+- altReasonCode: Broad status of fibre upgrade. Where:
+  - NULL_NA – no upgrade planned
+  - FTTP_NA – upgrade coming
+  - FTTP_SA – upgrade available now
+
+- techChangeStatus: More detailed status of fibre upgrade. Can be:
+  - Not planned
+  - Planned
+  - In design
+  - Committed
+  - Build Finalised
+  - Eligible to order 
+
+- programType: Type of fibre upgrade
+
+- targetEligibilityQuarter: The quarter that NBN are targeting to have the fibre upgrade ready to order
+
+- techFlip: Actually have no idea what this is for, I put it in because it looked like a relevant field but always seems to be blank for me
+
+**Checking status manually**
+
+You can get data manually by substituting your location Id in the following:
+
+Linux Terminal:
+curl --referer https://www.nbnco.com.au/ https://places.nbnco.net.au/places/v2/details/LOC000000000000 | python3 -m json.tool
+
+Windows Powershell:
+irm -Headers @{'referer'='https://www.nbnco.com.au/'} https://places.nbnco.net.au/places/v2/details/LOC000000000000 | fl

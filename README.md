@@ -44,6 +44,7 @@ bash /volume1/data/Scripts/NBN_Lookup/NBN_API_Fetch.sh LOC000000000000 example@e
 - Don't set this to run too often. The data changes rarely. So something like once a day is suitable
 
 **Explanation of fields**
+
 To the best of my knowledge, the firlds mean:
 
 - altReasonCode: Broad status of fibre upgrade. Where:
@@ -70,7 +71,9 @@ To the best of my knowledge, the firlds mean:
 You can get data manually by substituting your location Id in the following:
 
 Linux Terminal:
+
 curl --referer https://www.nbnco.com.au/ https://places.nbnco.net.au/places/v2/details/LOC000000000000 | python3 -m json.tool
 
 Windows Powershell:
+
 irm -Headers @{'referer'='https://www.nbnco.com.au/'} https://places.nbnco.net.au/places/v2/details/LOC000000000000 | fl
